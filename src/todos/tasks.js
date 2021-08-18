@@ -14,18 +14,6 @@ export const View = (props) => {
     )
 }
 
-const checkIfTaskHasChanged = (prevProps, nextProps) => {
-    const isSameTask = ["id", "title", "count"].every(prop => prevProps.task[prop] === nextProps.task[prop])
-
-    console.log(`checking`, prevProps, nextProps,
-    //prevProps.task == nextProps.task,
-    prevProps.updateTask === nextProps.updateTask,
-    //isSameTask
-    )
-
-    return isSameTask
-}
-
 const Task = memo((props) => {
     const { task, updateTask } = props
 
@@ -41,6 +29,6 @@ const Task = memo((props) => {
             {task.title}
         </div>
     )
-},checkIfTaskHasChanged)
+})
 
 export default View
